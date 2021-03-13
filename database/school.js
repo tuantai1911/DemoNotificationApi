@@ -1,11 +1,11 @@
 const schools = [
     {
-      "idGroup":"sc001",
-      "Name":"School A"
+        schoolId: 'sc001',
+        name: 'School A',
     },
     {
-      "idGroup":"sc002",
-      "Name":"School B"
-    }
-]
-export { schools}; 
+        schoolId: 'sc002',
+        name: 'School B',
+    },
+];
+export { schools as default };

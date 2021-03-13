@@ -1,14 +1,13 @@
 import express from 'express';
 
-import { sendSinglelDevice, sendToGroup,sendMultilDevice } from '../controllers/notification.js';
+import { sendSingleDevice, sendToGroup, sendMultiDevice } from '../controllers/notification.js';
 
 const router = express.Router();
- 
 
-router.post('/sendSinglelDevice', sendSinglelDevice);
+router.post('/sendSingleDevice', sendSingleDevice);
 
 router.post('/sendToGroup', sendToGroup);
 
-router.post('/sendMultiDevice', sendMultilDevice);
+router.post('/sendMultiDevice', sendMultiDevice);
 
 export default router;

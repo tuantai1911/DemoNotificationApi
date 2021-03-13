@@ -1,0 +1,12 @@
+{
+    "senderInformation": {
+        "teacherId": "tc001"
+    },
+    "receiverInformation": {
+        "groupId": "gr001"
+    },
+    "NotificationMessenge": {
+        "title": "activities",
+        "body": "picnic at weekend for group A test"
+    }
+}

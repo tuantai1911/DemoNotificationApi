@@ -1,16 +1,13 @@
-import { groupMembers } from "../database/groupMember.js";
+import groupMembers from '../database/groupMember.js';
 
-export function GetListParentOfGroup(idGroup) {
+export default function GetListParentOfGroup(groupId) {
+    const parents = [];
 
-    let lstParent = []
-
-    for(var i = 0; i < groupMembers.length; i++) {
-
-        var obj = groupMembers[i];
-        if(obj.idGroup == idGroup){
-            lstParent.push(obj)
+    for (let i = 0; i < groupMembers.length; i += 1) {
+        const obj = groupMembers[i];
+        if (obj.groupId === groupId) {
+            parents.push(obj);
         }
     }
-    return lstParent
-
+    return parents;
 }

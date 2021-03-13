@@ -1,0 +1,16 @@
+{
+    "senderInformation": {
+        "teacherId": "tc001"
+    },
+    "receiverInformation": {
+        "parentIds": [
+            "pr001",
+            "pr002",
+            "pr003"
+        ]
+    },
+    "NotificationMessenge": {
+        "title": "activities",
+        "body": "picnic at weekend - send to multi device"
+    }
+}

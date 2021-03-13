@@ -1,49 +1,41 @@
-import { parents } from '../database/parent.js'
-import { GetListParentOfGroup } from "./groupMemberService.js";
+import parents from '../database/parent.js';
+import GetListParentsOfGroup from './groupMemberService.js';
 
-export function GetDeviceToken(idParent) {
-    for (var i = 0; i < parents.length; i++) {
-        var obj = parents[i];
-        if (obj.idParent == idParent) {
-            return obj.deviceToken
-        }
+export function GetDeviceToken(parentId) {
+    const parentInfo = parents.find((e) => e.parentId === parentId);
+    if (parentInfo) {
+        return parentInfo.deviceToken;
     }
-    return null
-
+    return null;
 }
 
-export function GetDeviceTokenOfGroup(idGroup) {
-
-    let lstParent = GetListParentOfGroup(idGroup)
-    if (lstParent.length == 0) {
-        return null
-    }
-    else {
-        let lstToken = []
-
-        for (var i = 0; i < lstParent.length; i++) {
-            var obj = lstParent[i];
-            let parentInfo = parents.find(e => e.idParent === obj.idParent)
-            if (parentInfo) {
-                lstToken.push(parentInfo.deviceToken)
-            }
-        }
-        return lstToken
+export function GetDeviceTokenOfGroup(groupId) {
+    const parentsOfGroup = GetListParentsOfGroup(groupId);
+    if (parentsOfGroup.length === 0) {
+        return [];
     }
 
-}
+    const tokens = [];
 
-export function GetDeviceTokenByLstParent(idParents) {
-
-    let lstToken = []
-
-    for (var i = 0; i < idParents.length; i++) {
-        var id = idParents[i];
-        let parentInfo = parents.find(e => e.idParent === id)
+    for (let i = 0; i < parentsOfGroup.length; i += 1) {
+        const obj = parentsOfGroup[i];
+        const parentInfo = parents.find((e) => e.parentId === obj.parentId);
         if (parentInfo) {
-            lstToken.push(parentInfo.deviceToken)
+            tokens.push(parentInfo.deviceToken);
         }
     }
-    return lstToken
+    return tokens;
+}
 
+export function GetDeviceTokenByParentIds(parentIds) {
+    const tokens = [];
+
+    for (let i = 0; i < parentIds.length; i += 1) {
+        const id = parentIds[i];
+        const deviceToken = GetDeviceToken(id);
+        if (deviceToken) {
+            tokens.push(deviceToken);
+        }
+    }
+    return tokens;
 }

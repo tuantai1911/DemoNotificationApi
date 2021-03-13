@@ -1,13 +1,13 @@
 const teachers = [
     {
-      "idTeacher":"tc001",
-      "Name":"Munonye",
-      "idSchool":"sc001"
+        teacherId: 'tc001',
+        name: 'Munonye',
+        schoolId: 'sc001',
     },
     {
-      "idTeacher":"tc002",
-      "Name":"Kindson",
-      "idSchool":"sc002"
-    }
-]
-export { teachers}; 
+        teacherId: 'tc002',
+        name: 'Kindson',
+        schoolId: 'sc002',
+    },
+];
+export { teachers as default };

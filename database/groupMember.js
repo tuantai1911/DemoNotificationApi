@@ -1,24 +1,24 @@
-const groupMembers =[
+const groupMembers = [
     {
-      "idGroup":"gr001",
-      "idParent":"pr001"
+        groupId: 'gr001',
+        parentId: 'pr001',
     },
     {
-      "idGroup":"gr001",
-      "idParent":"pr002"
+        groupId: 'gr001',
+        parentId: 'pr002',
     },
     {
-      "idGroup":"gr001",
-      "idParent":"pr003"
+        groupId: 'gr001',
+        parentId: 'pr003',
     },
     {
-      "idGroup":"gr002",
-      "idParent":"pr004"
+        groupId: 'gr002',
+        parentId: 'pr004',
     },
     {
-      "idGroup":"gr002",
-      "idParent":"pr005"
-    }
-]
+        groupId: 'gr002',
+        parentId: 'pr005',
+    },
+];
 
-export { groupMembers}; 
+export { groupMembers as default };
